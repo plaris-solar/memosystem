@@ -9,11 +9,8 @@ test.db
 env.sh
 .coverage
 .vscode
-settings_local.py
 *.pyc
 memo_files
-Dockerfile
-docker-compose.yml
-settings.py
 memos/memos/sqlite/*
 .DS_Store
+.idea/

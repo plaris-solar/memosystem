@@ -1,3 +1,4 @@
+import os
 from os.path import exists,join
 from shutil import copy
 
@@ -11,6 +12,13 @@ try:
 except ImportError:
     pass
 
+for key, value in os.environ.items():
+    print(f"{key}: {value}")
+
+# Print all variables defined in the settings_local module
+for var in dir(settings_local):
+    if not var.startswith("__"):
+        print(f"{var}: {getattr(settings_local, var)}")
 
 from memos import create_app
 from memos.models.Memo import Memo
