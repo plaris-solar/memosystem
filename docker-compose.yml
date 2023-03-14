@@ -29,8 +29,8 @@ services:
       MYSQL_DATABASE: "memos"
       MYSQL_USER: "memosystem"
       MYSQL_PASSWORD: "memopw"
-#    ports:
-#      - 3306:3306
+    ports:
+      - 3306:3306
     volumes:
     # you need to fix the hardcoded source path
       - /Users/peyi/Solar/memosystem/memo_files/mysql:/var/lib/mysql
