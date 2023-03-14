@@ -55,7 +55,6 @@ This document explains how to install and run the Memo System application on you
 ## Notes
 
 -   When the system is running it will need to store the memos and memo meta data onto a permanent file system on the host. The docker compose will need to "mount" the local file system into the docker containers. In my installation I created a directory at the top level called "memo_files". In this directory, I make three subdirectories, one for the files (static), one for the MySQL, and one for the SQLite. You should create these directories and update the `docker-compose.yml` file with the correct paths to these directories on your machine.
-    
 -   The `docker-compose.yml` paths need to be adapted to the local filesystem. The current paths are set up for the author's local file system.
-    
 -   If you encounter any issues, please refer to the official Docker and Docker Compose documentation.
+-   Find the original documentation here [IoT Expert](https://github.com/iotexpert/memosystem).
