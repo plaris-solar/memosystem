@@ -14,8 +14,8 @@ services:
     # Unfortunately the volume must be an absolute path to the
     # memos.  This directory will hold the raw files + the meta jsons
     # of the memos... and should be backed up
-      - /Users/peyi/Solar/memosystem/memo_files/static:/app/memos/static
-      - /Users/peyi/Solar/memosystem/memo_files/sqlite:/app/memos/sqlite
+      - /path/memo_files/static:/app/memos/static
+      - /pathm/memo_files/sqlite:/app/memos/sqlite
 
   mysql:  # This container host the mysql instance.
     image: mysql
