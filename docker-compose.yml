@@ -15,7 +15,7 @@ services:
     # memos.  This directory will hold the raw files + the meta jsons
     # of the memos... and should be backed up
       - /path/memo_files/static:/app/memos/static
-      - /pathm/memo_files/sqlite:/app/memos/sqlite
+      - /path/memo_files/sqlite:/app/memos/sqlite
 
   mysql:  # This container host the mysql instance.
     image: mysql
