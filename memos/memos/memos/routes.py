@@ -23,6 +23,7 @@ memos = Blueprint('memos', __name__)
 @memos.route("/memo/<username>")
 @memos.route("/memo/<username>/<memo_number>")
 @memos.route("/memo/<username>/<memo_number>/<memo_version>")
+@login_required
 def main(username=None,memo_number=None,memo_version=None):
     """ This route is used to display the list of memos """
     with transaction():
@@ -448,6 +449,7 @@ def reject(username,memo_number,memo_version):
         return redirect(url_for(next_page,page=page,next_page=next_page))
 
 @memos.route("/search",methods=['GET', 'POST'])
+@login_required
 def search():
     """The route to handle searching"""
     with transaction():

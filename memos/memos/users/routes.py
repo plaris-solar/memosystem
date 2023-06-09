@@ -14,15 +14,18 @@ from memos.extensions import ldap
 users = Blueprint('users', __name__)
 
 @users.route("/register", methods=['GET', 'POST'])
+@login_required
 def register():
+    if not current_user.admin:
+        abort(403)
     if 'ENABLE_REGISTER' not in current_app.config or not current_app.config['ENABLE_REGISTER']:
         abort(404) #pragma nocover
     with transaction():
         if ldap: #pragma nocover  -- testing ldap is very environment centric.
             redirect(url_for('users.login'))
             
-        if current_user.is_authenticated:
-            return redirect(url_for('main.home'))
+        # if current_user.is_authenticated:
+        #     return redirect(url_for('main.home'))
         form = RegistrationForm()
         if form.validate_on_submit():
             hashed_password = User.create_hash_pw(form.password.data)
