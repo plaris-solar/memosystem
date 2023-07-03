@@ -43,7 +43,6 @@
                 
                 {% if user and user.admin %}
                     <a class="nav-item nav-link" href="{{ url_for('admin.main') }}">Admin</a>
-                    <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Users</a>
                 {% endif %}
                 <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account: {{current_user.username}}</a>
                 <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
