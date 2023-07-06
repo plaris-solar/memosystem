@@ -2,7 +2,7 @@ import os
 
 class Config:
     SERVER_NAME = "memosystem.completesolar.biz"
-    HOST = 'https://127.0.0.1' 
+    HOST = 'https://localhost' 
     PORT = '8086'
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
