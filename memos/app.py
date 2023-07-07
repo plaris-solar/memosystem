@@ -39,4 +39,4 @@ def inject_pinned():
     return dict(get_pinned=Memo.get_pinned)
 
 if __name__ == '__main__':
-    app.run(host='memosystem.completesolar.biz')
+    app.run(debug=True, port=8086, host='0.0.0.0')
