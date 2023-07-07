@@ -13,9 +13,9 @@
        <a id="loginlink" href='{{ auth_uri }}'></a>
 
         <hr>
-        {url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version, _external=True)}?detail
+        {{url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version, _external=True)}}?detail
         <hr>
-        https://memosystem.completesolar.biz{url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version,)}?detail
+        https://memosystem.completesolar.biz{{url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version,)}}?detail
         <hr>
         
 
