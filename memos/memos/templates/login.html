@@ -13,12 +13,3 @@
        <a id="loginlink" href='{{ auth_uri }}'></a>
     </div>
 {% endblock content %}
-
-<script>
-    $(document).ready(function(){
-        var href = $('#loginlink').attr('href');
-        href = href.replace("0.0.0.0","memosystem.completesolar.biz");
-        href = href.replace("%3A8086","");
-        $('#loginlink').attr('href',href);
-    })
-</script>
