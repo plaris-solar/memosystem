@@ -39,14 +39,4 @@ def inject_pinned():
     return dict(get_pinned=Memo.get_pinned)
 
 if __name__ == '__main__':
-     _host = '127.0.0.1'
-    _port = 8086
-    server_name = self.config.get('SERVER_NAME')
-    sn_host, sn_port = None, None
-
-    if server_name:
-        sn_host, _, sn_port = server_name.partition(':')
-
-    host = host or sn_host or _host
-    port = int(port or sn_port or _port)
     app.run(debug=True)
