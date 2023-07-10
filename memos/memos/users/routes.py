@@ -59,7 +59,7 @@ def login():
     else:
         return render_template("login.html", **auth.log_in(
             scopes=SCOPE,
-            redirect_uri=url_for("users.get_a_token", _external=True),
+            redirect_uri="https://memosystem.completesolar.biz/getAToken",
         ))
 
 
