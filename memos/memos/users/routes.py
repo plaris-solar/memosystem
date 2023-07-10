@@ -67,7 +67,7 @@ def login():
 def get_a_token():
     result = auth.complete_log_in(request.args)
     if "error" in result:
-        return result 
+        return request.args 
     else:
         user_name = auth.get_user().get("preferred_username").split('@')[0]  # username from the token
         user = User.query.filter_by(username=user_name).first()
