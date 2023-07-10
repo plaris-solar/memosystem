@@ -489,9 +489,12 @@ class Memo(db.Model):
                         sender=os.environ['MEMOS_EMAIL_USER'],
                         recipients=recipients,
                         reply_to=replyTo.email)
+            base_url = "https://memosystem.completesolar.biz"
+            url = url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version)
+            full_url = urljoin(base_url, url) + "?detail"
             msg.body = f'''{message}
         Use the following link:
-        {url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version, _external=True)}?detail
+        {full_url}
         '''
             if 'MEMOS_EMAIL_SERVER' in os.environ:
                 mail.send(msg)
@@ -515,9 +518,12 @@ class Memo(db.Model):
                         sender=os.environ['MEMOS_EMAIL_USER'],
                         recipients=recipients,
                         reply_to=replyTo.email)
+            base_url = "https://memosystem.completesolar.biz"
+            url = url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version)
+            full_url = urljoin(base_url, url) + "?detail"
             msg.body = f'''{message}
         Use the following link:
-        {url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version, _external=True)}?detail
+        {full_url}
         '''
             if 'MEMOS_EMAIL_SERVER' in os.environ:
                 mail.send(msg)

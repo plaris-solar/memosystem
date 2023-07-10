@@ -13,14 +13,4 @@
        <a id="loginlink" href='{{ auth_uri }}'></a>
         <!--https://memosystem.completesolar.biz{{url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version,)}}?detail-->
     </div>
-    <script>
-        /*document.addEventListener("DOMContentLoaded", function() {
-            var link = document.querySelector('#loginlink');
-            var href = link.getAttribute('href');
-            href = href.replace("0.0.0.0", "memosystem.completesolar.biz");
-            href = href.replace("%3A8086", "");
-            link.setAttribute('href', href);
-        });
-        */
-    </script>
 {% endblock content %}
