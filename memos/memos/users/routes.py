@@ -14,32 +14,14 @@ from memos.extensions import ldap
 import os
 import identity.web
 
-# Application (client) ID of app registration
-CLIENT_ID = "92a7b531-bb0d-447f-8424-70ddd57aad60"
-# Application's generated client secret: never check this into source control!
-CLIENT_SECRET = "QAw8Q~vpnxxb6c9v1-gRYaxSXZzBjWxOSIqBmdy0"
-
-# You can configure your authority via environment variable
-# Defaults to a multi-tenant app in world-wide cloud
-AUTHORITY = "https://login.microsoftonline.com/e6776e29-1e40-4aad-8034-72c122f8d472"
-
-REDIRECT_PATH = "/getAToken"  # Used for forming an absolute URL to your redirect URI.
-# The absolute URL must match the redirect URI you set
-# in the app's registration in the Azure portal.
-
-# You can find more Microsoft Graph API endpoints from Graph Explorer
-# https://developer.microsoft.com/en-us/graph/graph-explorer
-ENDPOINT = 'https://graph.microsoft.com/v1.0/users'  # This resource requires no admin consent
-
-# You can find the proper permission names from this document
-# https://docs.microsoft.com/en-us/graph/permissions-reference
-SCOPE = ["User.ReadBasic.All"]
-
-# Tells the Flask-session extension to store sessions in the filesystem
-SESSION_TYPE = "filesystem"
-# Using the file system will not work in most production systems,
-# it's better to use a database-backed session store instead.
-
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+AUTHORITY = os.getenv("AUTHORITY")
+REDIRECT_PATH = os.getenv("REDIRECT_PATH")
+ENDPOINT =  os.getenv("ENDPOINT")
+SCOPE = os.getenv("SCOPE")
+SESSION_TYPE = os.getenv("SESSION_TYPE")
+ENV_URL = os.getenv("ENV_URL")
 
 auth = identity.web.Auth(
     session=session,
@@ -59,7 +41,7 @@ def login():
     else:
         return render_template("login.html", **auth.log_in(
             scopes=SCOPE,
-            redirect_uri=url_for("users.get_a_token", _external=True),
+            redirect_uri=ENV_URL+"/getAToken",
         ))
 
 
