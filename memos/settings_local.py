@@ -19,8 +19,6 @@ os.environ['MEMOS_EMAIL_USER'] = ''
 os.environ['MEMOS_EMAIL_PASS'] = ''
 
 # if you want to turn on registration and your are not using LDAP
-os.environ['ENABLE_REGISTER']='true'
-os.environ['CLIENT_ID'] = "f37844cd-afdd-42e1-a17d-5145a1a596df"
-os.environ['CLIENT_SECRET'] = "KMa8Q~g21ZwF2z82di8GDqRO0LSKCWfnUtYfMaNU"
+os.environ['ENABLE_REGISTER']='false'
 
 os.environ['SESSION_TYPE'] = "filesystem"
