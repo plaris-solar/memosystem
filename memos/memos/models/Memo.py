@@ -491,7 +491,7 @@ class Memo(db.Model):
                         reply_to=replyTo.email)
             base_url = "https://memosystem.completesolar.biz"
             url = url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version)
-            full_url = urljoin(base_url, url) + "?detail"
+            full_url = base_url + url + "?detail"
             msg.body = f'''{message}
         Use the following link:
         {full_url}
@@ -520,7 +520,7 @@ class Memo(db.Model):
                         reply_to=replyTo.email)
             base_url = "https://memosystem.completesolar.biz"
             url = url_for('memos.main', username=self.user_id, memo_number=self.number, memo_version=self.version)
-            full_url = urljoin(base_url, url) + "?detail"
+            full_url = base_url + url + "?detail"
             msg.body = f'''{message}
         Use the following link:
         {full_url}
